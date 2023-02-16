@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +8,48 @@
     <link rel="stylesheet" href="css/styles.css">
     <title>Responsive Images</title>
 </head>
+
 <body>
-    
+    <h1>Responsive Images</h1>
+    <section>
+        <h2>Same Images In Different Sizes</h2>
+        <img srcset="
+        img/placeholder_320x320.png 320w,
+        img/placeholder_640x400.png 640w,
+        img/placeholder_1024x600.png 1024w" 
+        sizes= "
+        (max-width:320px) 320w,
+        (max-width:640px) 640w,
+        (max-width:1024px) 1024w"
+        src="img/placeholder_640x400.png" 
+        alt="Placeholder image">
+    </section>
+
+    <section>
+        <h2>Same size image with differeht resolutions</h2>
+        <img 
+        srcset="
+        img/placeholder_320x320.png 1x
+        img/placeholder_640x400.png 2x
+        img/placeholder_960x960.png 3x"
+        src="img/placeholder_320x320.png"
+        alt="placeholder image"
+        class="avatar"
+        >
+    </section>
+
+    <section>
+        <h2>different images for different screens</h2>
+        <picture>
+            <source 
+            srcset="img/fall-dog-1200.jpg"
+            media="(min-width: 1200px)">
+            <source 
+            srcset="img/fall-dog-900.jpg"
+            media="(min-width: 900px)">
+            <img src="img/fall-dog-640.jpg" alt ="placeholder image">
+        </picture>
+    </section>
 </body>
+
 </html>
